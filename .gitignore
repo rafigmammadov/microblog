@@ -1,2 +1,7 @@
+.flaskenv
+.env
+*.pyc
+__pycache__/
 venv/
-**/__pycache__/
+instance/
+app.db

@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 import os
-from hashlib import sha256
+import traceback
 from flask import render_template, flash, redirect, current_app, abort, url_for, request
 from werkzeug.utils import secure_filename
 from urllib.parse import urlsplit
@@ -85,7 +85,7 @@ def user_avatar(username, size):
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
