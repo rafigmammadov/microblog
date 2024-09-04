@@ -13,3 +13,4 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = os.environ.get('ADMINS').split(',') if os.environ.get('ADMINS') else []
+    POSTS_PER_PAGE = 25
